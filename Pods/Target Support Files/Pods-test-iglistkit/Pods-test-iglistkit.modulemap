@@ -1,0 +1,6 @@
+framework module Pods_test_iglistkit {
+  umbrella header "Pods-test-iglistkit-umbrella.h"
+
+  export *
+  module * { export * }
+}
