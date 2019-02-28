@@ -3,7 +3,6 @@ use_frameworks!
 
 target 'test-iglistkit' do
   pod 'IGListKit', '~> 3.0'
-  pod "SwiftDate", "5.1.0"
 
-  pod "SwiftLint", :configurations => ["debug"]
+  pod "SwiftLint"
 end

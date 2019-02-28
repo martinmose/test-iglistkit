@@ -6,3 +6,7 @@ disabled_rules:
 identifier_name:
   excluded:
     - id
+    - T
+type_name:
+  excluded:
+    - T
