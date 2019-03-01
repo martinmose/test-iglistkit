@@ -5,7 +5,7 @@
 
 import UIKit
 
-class DepartureCell: BaseCollectionViewCell, ItemModelUpdatable {
+class DepartureCell: UICollectionViewCell, ItemModelUpdatable {
     typealias T = Departure
     
     @IBOutlet weak var name: UILabel!
@@ -14,5 +14,20 @@ class DepartureCell: BaseCollectionViewCell, ItemModelUpdatable {
     func updateWith(_ data: Departure) {
         name.text = data.name
         price.text = data.price
+    }
+
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
+                    -> UICollectionViewLayoutAttributes {
+        setNeedsLayout()
+        layoutIfNeeded()
+
+        let size = contentView.systemLayoutSizeFitting(
+                CGSize(width: layoutAttributes.frame.width, height: CGFloat.greatestFiniteMagnitude),
+                withHorizontalFittingPriority: UILayoutPriority.required,
+                verticalFittingPriority: UILayoutPriority.fittingSizeLevel)
+
+        layoutAttributes.frame.size = size
+
+        return layoutAttributes
     }
 }

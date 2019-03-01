@@ -4,7 +4,7 @@
 //
 
 class TicketController: BaseController, Adapter {
-    lazy var adapter = createAdapter(dataSource: DepartureDataSource())
+    lazy var adapter = createAdapter(dataSource: TicketDataSource())
 
     override func viewDidLoad() {
         super.viewDidLoad()

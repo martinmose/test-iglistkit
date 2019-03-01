@@ -35,7 +35,7 @@ class DepartureDataSource: NSObject, ListAdapterDataSource {
         return DepartureSectionController()
     }
 
-    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {    
         return nil
     }
 }

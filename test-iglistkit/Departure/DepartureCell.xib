@@ -21,6 +21,9 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="QUd-ff-HjF">
                         <rect key="frame" x="0.0" y="0.0" width="281" height="86"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="86" id="0tn-Q2-ZUg"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -44,6 +47,7 @@
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="QUd-ff-HjF" secondAttribute="bottom" constant="34" id="PUq-8O-ky2"/>
                 <constraint firstItem="QUd-ff-HjF" firstAttribute="leading" secondItem="ErM-tK-9dR" secondAttribute="leading" id="R4Q-td-UQr"/>

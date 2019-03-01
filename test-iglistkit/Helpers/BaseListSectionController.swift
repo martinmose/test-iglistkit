@@ -8,11 +8,11 @@ import IGListKit
 class BaseListSectionController<T>: ListSectionController {
     var currentItem: T?
 
-    override final func numberOfItems() -> Int {
+    override func numberOfItems() -> Int {
         return 1
     }
 
-    override func didUpdate(to object: Any) {
+    override final func didUpdate(to object: Any) {
         guard let item = object as? T else {
             return
         }
@@ -20,7 +20,7 @@ class BaseListSectionController<T>: ListSectionController {
         currentItem = item
     }
 
-    override final func sizeForItem(at index: Int) -> CGSize {
+    override func sizeForItem(at index: Int) -> CGSize {
         guard let ctx = collectionContext else {
             return CGSize(width: 0, height: 0)
         }
@@ -28,7 +28,7 @@ class BaseListSectionController<T>: ListSectionController {
         let width: CGFloat = ctx.containerSize.width
         // it doesn't matter what the height is as long it is > 0.
         // it is a high number now so we don't get any constraints errors 
-        let height: CGFloat = 55
+        let height: CGFloat = 1000
 
         return CGSize(width: width, height: height)
     }

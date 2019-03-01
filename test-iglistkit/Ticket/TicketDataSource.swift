@@ -23,7 +23,7 @@ class TicketDataSource: NSObject, ListAdapterDataSource {
 
     func listAdapter(_ listAdapter: ListAdapter,
                      sectionControllerFor object: Any) -> ListSectionController {
-        return DepartureSectionController()
+        return TicketSectionController()
     }
 
     func emptyView(for listAdapter: ListAdapter) -> UIView? {

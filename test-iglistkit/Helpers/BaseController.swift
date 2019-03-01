@@ -7,7 +7,16 @@ import UIKit
 import IGListKit
 
 class BaseController: UIViewController {
-    @IBOutlet weak final var collectionView: UICollectionView!
+    // added because of no storyboard
+    let collectionView: UICollectionView = {
+        let view = UICollectionView(
+                frame: .zero,
+                collectionViewLayout: UICollectionViewFlowLayout())
+        
+        view.backgroundColor = .white
+        
+        return view
+    }()
 
     public final func createAdapter(dataSource: ListAdapterDataSource) -> ListAdapter {
         let updater = ListAdapterUpdater()
@@ -26,8 +35,17 @@ class BaseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // added because of no storyboard
+        view.addSubview(collectionView)
+        
         if let collectionViewFlowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
+    }
+
+    // added because of no storyboard
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
     }
 }
